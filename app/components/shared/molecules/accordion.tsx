@@ -22,14 +22,14 @@ export default function Accordion({
   const contentRef = useRef<HTMLDivElement>(null);
 
   const openAccordion = useCallback(() => {
-    const items = document.querySelectorAll(`div[data-group=${groupId}]`);
-    items.forEach((item) => {
-      item?.classList.toggle("opened", item === accordionRef.current);
-    });
     const target = contentRef.current;
     if (target) {
       target.style.maxHeight = target.scrollHeight + "px";
     }
+    const items = document.querySelectorAll(`div[data-group=${groupId}]`);
+    items.forEach((item) => {
+      item?.classList.toggle("opened", item === accordionRef.current);
+    });
   }, [groupId]);
 
   useEffect(() => {

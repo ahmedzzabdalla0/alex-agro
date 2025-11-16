@@ -1,6 +1,6 @@
 import patternImage from "@/assets/landing/patterns/pattern-3.png";
 import Subtitle from "@/components/atoms/landing/subtitle";
-import Accordion from "@/components/molecules/landing/accordion";
+import Accordion from "@/components/shared/molecules/accordion";
 import Button from "@/components/shared/atoms/button";
 
 export default function FAQsSection() {
