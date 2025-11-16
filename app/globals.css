@@ -1,26 +1,671 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Base Styles */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  a {
+    cursor: pointer;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+
+  *:focus {
+    outline: none;
+  }
+
+  input:-webkit-autofill {
+    -webkit-background-clip: text;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  button {
+    @apply clickable;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Variants */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Variables */
+
+@theme {
+  /* Reset */
+  --container-*: initial;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1440px;
+  --breakpoint-large-desktop: 1720px;
+
+  /* Font Weights */
+  --font-weight-inter-0: 400;
+  --font-weight-inter-1: 500;
+  --font-weight-inter-2: 600;
+  --font-weight-inter-3: 700;
+  --font-weight-oxanium-0: 700;
+
+  /* Line Heights */
+  --leading-0: 5.5rem; /* 88px */
+  --leading-1: 4.5rem; /* 72px */
+  --leading-2: 4rem; /* 64px */
+  --leading-4: 3.75rem; /* 60px */
+  --leading-5: 3rem; /* 48px */
+  --leading-6: 2.25rem; /* 36px */
+  --leading-10: 1.875rem; /* 30px */
+  --leading-14: 1.6875rem; /* 27px */
+  --leading-18: 1.5rem; /* 24px */
+  --leading-22: 1.3125rem; /* 21px */
+  --leading-26: 1.125rem; /* 18px */
+  --leading-32: 3.375rem; /* 54px */
+  --leading-53: 2.0625rem; /* 33px */
+
+  /* Font Sizes */
+  --font-size-0: 0.75rem; /* 12px */
+  --font-size-1: 0.875rem; /* 14px */
+  --font-size-2: 1rem; /* 16px */
+  --font-size-3: 1.125rem; /* 18px */
+  --font-size-4: 1.25rem; /* 20px */
+  --font-size-5: 1.375rem; /* 22px */
+  --font-size-6: 1.5rem; /* 24px */
+  --font-size-7: 2rem; /* 32px */
+  --font-size-8: 2.25rem; /* 36px */
+  --font-size-9: 2.5rem; /* 40px */
+  --font-size-10: 3rem; /* 48px */
+  --font-size-11: 3.5rem; /* 56px */
+  --font-size-12: 4rem; /* 64px */
+  --font-size-13: 5rem; /* 80px */
+
+  /* Colors */
+  --color-primary: #97b004;
+  --color-primary-100: #ddfd24;
+  --color-primary-200: #89a003;
+  --color-primary-300: #566501;
+
+  --color-secondary: #edeee3;
+  --color-secondary-100: #c0c699;
+  --color-secondary-200: #929b57;
+
+  --color-neutral: #0e2207;
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #eaeaea;
+  --color-neutral-300: #d5d5d5;
+  --color-neutral-400: #c0c0c0;
+  --color-neutral-500: #ababab;
+  --color-neutral-600: #979797;
+  --color-neutral-700: #828282;
+  --color-neutral-800: #6d6d6d;
+  --color-neutral-900: #585858;
+  --color-neutral-1000: #0e2207;
+  --color-neutral-background: #fdfbf6;
+  --color-neutral-light-green: #dee0c0;
+  --color-neutral-light-grey: #fafafa;
+
+  --color-red: #d00416;
+  --color-yellow: #dfb400;
+  --color-green: #1fc16b;
+
+  --color-third: #f3c917;
+  --color-third-100: #f9e48b;
+  --color-third-200: #b19109;
+
+  /* Border Radius */
+  --radius-1: 0.125rem; /* 2px */
+  --radius-2: 0.25rem; /* 4px */
+  --radius-3: 0.375rem; /* 6px */
+  --radius-4: 0.5rem; /* 8px */
+  --radius-5: 0.625rem; /* 10px */
+  --radius-6: 0.75rem; /* 12px */
+  --radius-7: 1rem; /* 16px */
+  --radius-8: 1.5rem; /* 24px */
+
+  /* Font Variables */
+  --font-website-h-1: var(--font-weight-inter-2) var(--font-size-13) /
+    var(--leading-0) var(--font-inter);
+  --font-website-h-2: var(--font-weight-inter-3) var(--font-size-12) /
+    var(--leading-1) var(--font-inter);
+  --font-website-h-3: var(--font-weight-inter-3) var(--font-size-11) /
+    var(--leading-2) var(--font-inter);
+  --font-website-h-4: var(--font-weight-inter-3) var(--font-size-10) /
+    var(--leading-1) var(--font-inter);
+  --font-website-h-5: var(--font-weight-inter-3) var(--font-size-9) /
+    var(--leading-4) var(--font-inter);
+  --font-website-h-6: var(--font-weight-inter-3) var(--font-size-7) /
+    var(--leading-5) var(--font-inter);
+  --font-website-b-1: var(--font-weight-inter-3) var(--font-size-6) /
+    var(--leading-6) var(--font-inter);
+  --font-website-b-2: var(--font-weight-inter-2) var(--font-size-6) /
+    var(--leading-6) var(--font-inter);
+  --font-website-b-3: var(--font-weight-inter-1) var(--font-size-6) /
+    var(--leading-6) var(--font-inter);
+  --font-website-b-4: var(--font-weight-inter-0) var(--font-size-6) /
+    var(--leading-6) var(--font-inter);
+  --font-website-b-5: var(--font-weight-inter-3) var(--font-size-4) /
+    var(--leading-10) var(--font-inter);
+  --font-website-b-6: var(--font-weight-inter-2) var(--font-size-4) /
+    var(--leading-10) var(--font-inter);
+  --font-website-b-7: var(--font-weight-inter-1) var(--font-size-4) /
+    var(--leading-10) var(--font-inter);
+  --font-website-b-8: var(--font-weight-inter-0) var(--font-size-4) /
+    var(--leading-10) var(--font-inter);
+  --font-website-b-9: var(--font-weight-inter-3) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-website-b-10: var(--font-weight-inter-2) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-website-b-11: var(--font-weight-inter-1) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-website-b-12: var(--font-weight-inter-0) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-website-b-13: var(--font-weight-inter-3) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-website-b-14: var(--font-weight-inter-2) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-website-b-15: var(--font-weight-inter-1) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-website-b-16: var(--font-weight-inter-0) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-website-b-17: var(--font-weight-inter-3) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-website-b-18: var(--font-weight-inter-2) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-website-b-19: var(--font-weight-inter-1) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-website-b-20: var(--font-weight-inter-0) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-website-b-21: var(--font-weight-inter-3) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-website-b-22: var(--font-weight-inter-2) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-website-b-23: var(--font-weight-inter-1) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-website-b-24: var(--font-weight-inter-0) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-tablet-h-1: var(--font-weight-inter-3) var(--font-size-10) /
+    var(--leading-4) var(--font-inter);
+  --font-tablet-h-2: var(--font-weight-inter-3) var(--font-size-9) /
+    var(--leading-4) var(--font-inter);
+  --font-tablet-h-3: var(--font-weight-inter-3) var(--font-size-8) /
+    var(--leading-32) var(--font-inter);
+  --font-tablet-h-4: var(--font-weight-inter-3) var(--font-size-7) /
+    var(--leading-5) var(--font-inter);
+  --font-tablet-h-5: var(--font-weight-inter-3) var(--font-size-6) /
+    var(--leading-6) var(--font-inter);
+  --font-tablet-h-6: var(--font-weight-inter-3) var(--font-size-4) /
+    var(--leading-10) var(--font-inter);
+  --font-tablet-b-1: var(--font-weight-inter-3) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-tablet-b-2: var(--font-weight-inter-2) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-tablet-b-3: var(--font-weight-inter-1) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-tablet-b-4: var(--font-weight-inter-0) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-tablet-b-5: var(--font-weight-inter-3) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-tablet-b-6: var(--font-weight-inter-2) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-tablet-b-7: var(--font-weight-inter-1) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-tablet-b-8: var(--font-weight-inter-0) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-tablet-b-13: var(--font-weight-inter-3) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-tablet-b-14: var(--font-weight-inter-2) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-tablet-b-15: var(--font-weight-inter-1) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-tablet-b-16: var(--font-weight-inter-0) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-tablet-b-17: var(--font-weight-inter-3) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-tablet-b-18: var(--font-weight-inter-2) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-tablet-b-19: var(--font-weight-inter-1) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-tablet-b-20: var(--font-weight-inter-0) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-mobile-h-1: var(--font-weight-inter-3) var(--font-size-6) /
+    var(--leading-6) var(--font-inter);
+  --font-mobile-h-2: var(--font-weight-inter-3) var(--font-size-5) /
+    var(--leading-53) var(--font-inter);
+  --font-mobile-h-3: var(--font-weight-inter-3) var(--font-size-4) /
+    var(--leading-10) var(--font-inter);
+  --font-mobile-h-4: var(--font-weight-inter-3) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-mobile-h-5: var(--font-weight-inter-3) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-mobile-h-6: var(--font-weight-inter-3) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-mobile-b-1: var(--font-weight-inter-3) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-mobile-b-2: var(--font-weight-inter-2) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-mobile-b-3: var(--font-weight-inter-1) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-mobile-b-4: var(--font-weight-inter-0) var(--font-size-3) /
+    var(--leading-14) var(--font-inter);
+  --font-mobile-b-5: var(--font-weight-inter-3) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-mobile-b-6: var(--font-weight-inter-2) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-mobile-b-7: var(--font-weight-inter-1) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-mobile-b-8: var(--font-weight-inter-0) var(--font-size-2) /
+    var(--leading-18) var(--font-inter);
+  --font-mobile-b-13: var(--font-weight-inter-3) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-mobile-b-14: var(--font-weight-inter-2) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-mobile-b-15: var(--font-weight-inter-1) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-mobile-b-16: var(--font-weight-inter-0) var(--font-size-1) /
+    var(--leading-22) var(--font-inter);
+  --font-mobile-b-17: var(--font-weight-inter-3) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-mobile-b-18: var(--font-weight-inter-2) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-mobile-b-19: var(--font-weight-inter-1) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+  --font-mobile-b-20: var(--font-weight-inter-0) var(--font-size-0) /
+    var(--leading-26) var(--font-inter);
+
+  --font-website-label: var(--font-weight-oxanium-0) var(--font-size-6) /
+    var(--leading-6) var(--font-oxanium);
+  --font-tablet-label: var(--font-weight-oxanium-0) var(--font-size-2) /
+    var(--leading-18) var(--font-oxanium);
+  --font-mobile-label: var(--font-weight-oxanium-0) var(--font-size-2) /
+    var(--leading-18) var(--font-oxanium);
+}
+
+/* Fonts */
+
+@utility font-h-1 {
+  font: theme(font-mobile-h-1);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-h-1);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-h-1);
+  }
+}
+
+@utility font-h-2 {
+  font: theme(font-mobile-h-2);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-h-2);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-h-2);
+  }
+}
+
+@utility font-h-3 {
+  font: theme(font-mobile-h-3);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-h-3);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-h-3);
+  }
+}
+
+@utility font-h-4 {
+  font: theme(font-mobile-h-4);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-h-4);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-h-4);
+  }
+}
+
+@utility font-h-5 {
+  font: theme(font-mobile-h-5);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-h-5);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-h-5);
+  }
+}
+
+@utility font-h-6 {
+  font: theme(font-mobile-h-6);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-h-6);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-h-6);
+  }
+}
+
+@utility font-b-1 {
+  font: theme(font-mobile-b-1);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-1);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-1);
+  }
+}
+
+@utility font-b-2 {
+  font: theme(font-mobile-b-2);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-2);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-2);
+  }
+}
+
+@utility font-b-3 {
+  font: theme(font-mobile-b-3);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-3);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-3);
+  }
+}
+
+@utility font-b-4 {
+  font: theme(font-mobile-b-4);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-4);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-4);
+  }
+}
+
+@utility font-b-5 {
+  font: theme(font-mobile-b-5);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-5);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-5);
+  }
+}
+
+@utility font-b-6 {
+  font: theme(font-mobile-b-6);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-6);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-6);
+  }
+}
+
+@utility font-b-7 {
+  font: theme(font-mobile-b-7);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-7);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-7);
+  }
+}
+
+@utility font-b-8 {
+  font: theme(font-mobile-b-8);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-8);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-8);
+  }
+}
+
+@utility font-b-9 {
+  font: theme(font-website-b-9);
+}
+
+@utility font-b-10 {
+  font: theme(font-website-b-10);
+}
+
+@utility font-b-11 {
+  font: theme(font-website-b-11);
+}
+
+@utility font-b-12 {
+  font: theme(font-website-b-12);
+}
+
+@utility font-b-13 {
+  font: theme(font-mobile-b-13);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-13);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-13);
+  }
+}
+
+@utility font-b-14 {
+  font: theme(font-mobile-b-14);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-14);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-14);
+  }
+}
+
+@utility font-b-15 {
+  font: theme(font-mobile-b-15);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-15);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-15);
+  }
+}
+
+@utility font-b-16 {
+  font: theme(font-mobile-b-16);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-16);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-16);
+  }
+}
+
+@utility font-b-17 {
+  font: theme(font-mobile-b-17);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-17);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-17);
+  }
+}
+
+@utility font-b-18 {
+  font: theme(font-mobile-b-18);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-18);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-18);
+  }
+}
+
+@utility font-b-19 {
+  font: theme(font-mobile-b-19);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-19);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-19);
+  }
+}
+
+@utility font-b-20 {
+  font: theme(font-mobile-b-20);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-b-20);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-b-20);
+  }
+}
+
+@utility font-b-21 {
+  font: theme(font-website-b-21);
+}
+
+@utility font-b-22 {
+  font: theme(font-website-b-22);
+}
+
+@utility font-b-23 {
+  font: theme(font-website-b-23);
+}
+
+@utility font-b-24 {
+  font: theme(font-website-b-24);
+}
+
+@utility font-label {
+  font: theme(font-mobile-label);
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    font: theme(font-tablet-label);
+  }
+  @media (min-width: theme(breakpoint-tablet)) {
+    font: theme(font-website-label);
+  }
+}
+
+/* Icons */
+
+@utility icon-* {
+  width: --spacing(--value(integer));
+  height: --spacing(--value(integer));
+}
+
+@utility icon-auto {
+  width: auto;
+  height: auto;
+}
+
+/* Other Utilities */
+
+@utility container {
+  @apply px-4 max-w-(--breakpoint-large-desktop) mx-auto;
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    @apply px-10;
+  }
+  @media (min-width: theme(breakpoint-desktop)) {
+    @apply px-20;
+  }
+}
+
+@utility section-py {
+  @apply py-6;
+
+  @media (min-width: theme(breakpoint-mobile)) {
+    @apply py-20;
+  }
+}
+
+@utility stop-scroll {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  & body {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+  }
+}
+
+@utility center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+@utility center-x {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+@utility center-y {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+@utility clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+@utility full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Sections */
+
+/* Nav */
+@utility nav {
+  @apply w-full h-20 z-10;
+
+  @media (min-width: theme(breakpoint-tablet)) {
+    @apply h-24;
+  }
 }
