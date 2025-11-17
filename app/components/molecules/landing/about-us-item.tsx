@@ -19,10 +19,10 @@ export default function AboutUsItem({
 
       {/* Content */}
       <div className="flex flex-col gap-y-2">
-        <h6 className="text-neutral font-b-5">{title}</h6>
-        <h6 className="max-w-[550px] text-neutral-800 font-b-16">
+        <h3 className="text-neutral font-b-5">{title}</h3>
+        <p className="max-w-[550px] text-neutral-800 font-b-16">
           {description}
-        </h6>
+        </p>
       </div>
     </div>
   );

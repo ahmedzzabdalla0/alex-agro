@@ -1,3 +1,6 @@
+import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
+import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
+
 export const companyLinks = [
   {
     label: "Home",
@@ -32,5 +35,28 @@ export const helpLinks = [
   {
     label: "Privacy Policy",
     href: "#",
+  },
+];
+
+export const socialMediaLinks = [
+  {
+    href: "#",
+    label: "facebook",
+    icon: BiLogoFacebook,
+  },
+  {
+    href: "#",
+    label: "instagram",
+    icon: AiOutlineInstagram,
+  },
+  {
+    href: "#",
+    label: "whatsapp",
+    icon: AiOutlineWhatsApp,
+  },
+  {
+    href: "#",
+    label: "linkedin",
+    icon: BiLogoLinkedin,
   },
 ];

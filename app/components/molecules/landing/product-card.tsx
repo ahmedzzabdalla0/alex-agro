@@ -54,7 +54,7 @@ export default function ProductCard({
       <div className="flex flex-col gap-y-4 p-3 pt-2">
         {/* Title & Description */}
         <div className="">
-          <h6 className="mb-1 text-neutral font-b-13">{title}</h6>
+          <h3 className="mb-1 text-neutral font-b-13">{title}</h3>
           <p className="text-neutral-800 font-b-20">{description}</p>
         </div>
 
@@ -63,7 +63,11 @@ export default function ProductCard({
           <Link href={"#"} className="text-primary font-b-19">
             Learn More
           </Link>
-          <Button as={Link} href={"#"} />
+          <Button
+            as={Link}
+            href={"#"}
+            aria-label={`Learn more about ${title} product`}
+          />
         </div>
       </div>
     </div>

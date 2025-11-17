@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 
 interface MyProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export default function ToastButton({ className }: MyProps) {
+export default function ToastButton({ className, ...props }: MyProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -20,12 +20,14 @@ export default function ToastButton({ className }: MyProps) {
 
   return (
     <button
+      aria-label={`${isOpen ? "close" : "open"} navigation menu`}
       onClick={handleToggle}
       className={twMerge(
         "text-neutral",
         isOpen && "rounded-4 border border-neutral-200 p-2.5",
         className,
       )}
+      {...props}
     >
       {isOpen ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={24} />}
     </button>

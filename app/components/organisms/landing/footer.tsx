@@ -1,10 +1,12 @@
-import Image from "next/image";
 import logo from "@/assets/shared/images/logo.png";
-import Link from "@/components/shared/atoms/link";
 import IconBadge from "@/components/shared/atoms/icon-badge";
-import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
-import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
-import { companyLinks, helpLinks } from "@/constants/landing/footer";
+import Link from "@/components/shared/atoms/link";
+import {
+  companyLinks,
+  helpLinks,
+  socialMediaLinks,
+} from "@/constants/landing/footer";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -64,39 +66,21 @@ export default function Footer() {
 
         <div className="flex justify-between gap-y-6 border-t border-neutral-300 pt-6 max-mobile:flex-col mobile:pt-8">
           <p className="text-neutral-100 font-b-15">
-            © Copyright 2025, Alexagro All Rights Reserved
+            &copy; Copyright 2025, Alexagro All Rights Reserved
           </p>
 
           {/* Social Media Links */}
           <div className="space-x-2">
-            <Link href="#">
-              <IconBadge
-                className="p-[7px]"
-                iconProps={{ style: { fontSize: "1rem" } }}
-                icon={BiLogoFacebook}
-              />
-            </Link>
-            <Link href="#">
-              <IconBadge
-                className="p-[7px]"
-                iconProps={{ style: { fontSize: "1rem" } }}
-                icon={AiOutlineInstagram}
-              />
-            </Link>
-            <Link href="#">
-              <IconBadge
-                className="p-[7px]"
-                iconProps={{ style: { fontSize: "1rem" } }}
-                icon={AiOutlineWhatsApp}
-              />
-            </Link>
-            <Link href="#">
-              <IconBadge
-                className="p-[7px]"
-                iconProps={{ style: { fontSize: "1rem" } }}
-                icon={BiLogoLinkedin}
-              />
-            </Link>
+            {socialMediaLinks.map((i, index) => (
+              <Link key={`social-media-${index}`} href={i.href}>
+                <IconBadge
+                  aria-label={i.label + " link"}
+                  className="p-[7px]"
+                  iconProps={{ style: { fontSize: "1rem" } }}
+                  icon={i.icon}
+                />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

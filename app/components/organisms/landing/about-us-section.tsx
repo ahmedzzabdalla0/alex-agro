@@ -100,7 +100,7 @@ export default function AboutUsSection() {
               {/* Heading */}
               <div className="flex items-center gap-x-2">
                 <RiVerifiedBadgeFill className="text-[20px] text-primary mobile:text-2xl" />
-                <h6 className="text-neutral font-b-1">Proven Excellence</h6>
+                <h3 className="text-neutral font-b-1">Proven Excellence</h3>
               </div>
 
               {/* Body */}
