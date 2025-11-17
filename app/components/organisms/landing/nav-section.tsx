@@ -1,6 +1,6 @@
 import Logo from "@/assets/shared/images/logo.png";
 import NavVector from "@/assets/shared/vectors/nav";
-import ToastButton from "@/components/atoms/landing/toast-button";
+import MenuToggle from "@/components/atoms/landing/menu-toggle";
 import ActiveLink from "@/components/shared/atoms/active-link";
 import Button from "@/components/shared/atoms/button";
 import Link from "@/components/shared/atoms/link";
@@ -33,10 +33,13 @@ export default function NavSection() {
           </Link>
         </div>
 
+        {/* Mobile Menu Toggle Icon */}
+        <MenuToggle className="text-neutral mobile:hidden" />
+
         {/* Navigation Menu (Links + Contact Button) */}
-        <div id="nav-menu" className="group contents h-full w-full">
+        <div className="group contents h-full w-full">
           {/* Mobile Overlay Background */}
-          <div className="pointer-events-none fixed inset-0 -z-1 bg-neutral-background opacity-0 transition-opacity max-mobile:group-[.show]:pointer-events-auto max-mobile:group-[.show]:opacity-100"></div>
+          <div className="pointer-events-none fixed inset-0 -z-1 bg-neutral-background opacity-0 transition-opacity max-mobile:group-[.peer:checked~&]:pointer-events-auto max-mobile:group-[.peer:checked~&]:opacity-100"></div>
 
           {/* Menu Container (Responsive) */}
           <div
@@ -45,7 +48,7 @@ export default function NavSection() {
               "flex",
 
               // Mobile behavior
-              "inset-x-0 top-full gap-y-4 max-mobile:absolute max-mobile:-z-1 max-mobile:flex-col max-mobile:opacity-0 max-mobile:transition-opacity max-mobile:group-[.show]:opacity-100 max-mobile:group-[:not(.show)]:pointer-events-none",
+              "inset-x-0 top-full gap-y-4 max-mobile:absolute max-mobile:-z-1 max-mobile:flex-col max-mobile:opacity-0 max-mobile:transition-opacity max-mobile:group-[.peer:checked~&]:opacity-100 max-mobile:group-[:not(.peer:checked~&)]:pointer-events-none",
 
               // Tablet & up
               "mobile:contents",
@@ -73,9 +76,6 @@ export default function NavSection() {
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu Toggle Icon */}
-        <ToastButton className="text-neutral mobile:hidden" />
       </div>
     </nav>
   );

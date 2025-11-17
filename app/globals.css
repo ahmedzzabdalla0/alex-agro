@@ -7,6 +7,11 @@
     scroll-behavior: smooth;
   }
 
+  html:has(input.overlay-toggle:checked),
+  body:has(input.overlay-toggle:checked) {
+    overflow: hidden;
+  }
+
   a {
     cursor: pointer;
   }
@@ -597,7 +602,7 @@
 /* Other Utilities */
 
 @utility container {
-  @apply px-4 max-w-(--breakpoint-large-desktop) mx-auto;
+  @apply mx-auto max-w-(--breakpoint-large-desktop) px-4;
 
   @media (min-width: theme(breakpoint-mobile)) {
     @apply px-10;
@@ -663,7 +668,7 @@
 
 /* Nav */
 @utility nav {
-  @apply w-full h-20 z-10;
+  @apply z-10 h-20 w-full;
 
   @media (min-width: theme(breakpoint-tablet)) {
     @apply h-24;
