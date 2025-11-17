@@ -15,6 +15,8 @@ export default function HeroSection() {
           src={posterImage}
           alt="poster"
           className="object-cover select-none"
+          loading="eager"
+          fetchPriority="high"
           preload
           fill
         />

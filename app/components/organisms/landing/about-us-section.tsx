@@ -21,11 +21,13 @@ export default function AboutUsSection() {
         src={gradientImage}
         alt="gradient-1"
         className="absolute top-0 left-0 select-none"
+        fetchPriority="low"
       />
       <Image
         src={gradientImage}
         alt="gradient-1"
         className="absolute right-0 bottom-0 -rotate-180 select-none"
+        fetchPriority="low"
       />
 
       {/* Patterns */}
@@ -33,12 +35,14 @@ export default function AboutUsSection() {
         src={patternImage}
         alt="pattern-1"
         className="absolute -top-[30px] -left-[150px] rotate-165 opacity-10 select-none mobile:-top-[60px] mobile:-left-[250px]"
+        fetchPriority="low"
       />
 
       <Image
         src={patternImage}
         alt="pattern-1"
         className="absolute -right-20 -bottom-[60px] -rotate-15 opacity-10 select-none mobile:-right-[481px] mobile:-bottom-[273px]"
+        fetchPriority="low"
       />
 
       {/* Container */}

@@ -1,5 +1,6 @@
 import backgroundImage from "@/assets/landing/images/thailand-tea-hills.jpg";
 import Button from "@/components/shared/atoms/button";
+import Image from "next/image";
 
 export default function CTASection() {
   return (
@@ -8,12 +9,17 @@ export default function CTASection() {
       className="relative overflow-hidden section-py max-mobile:py-[105px]"
     >
       {/* Patterns */}
-      <div
-        className="absolute inset-0 bg-center max-mobile:bg-size-[250%_250%] mobile:bg-cover"
-        style={{
-          backgroundImage: `linear-gradient(101.56deg, rgba(0, 0, 0, 0) -59.02%, #000000 169.12%), url("${backgroundImage.src}")`,
-        }}
-      ></div>
+      <div className="absolute inset-0">
+        <Image
+          src={backgroundImage}
+          alt="background"
+          fill
+          fetchPriority="low"
+          className="object-cover max-mobile:scale-250"
+        />
+
+        <div className="absolute inset-0 bg-[linear-gradient(101.56deg,rgba(0,0,0,0)_-59.02%,#000_169.12%)]" />
+      </div>
 
       {/* Container */}
       <div className="relative container text-center *:mx-auto">

@@ -27,6 +27,7 @@ export default function ServiceCard({
           src={imageSrc}
           alt={alt}
           className="object-cover object-center"
+          fetchPriority="low"
           fill
         />
       </div>

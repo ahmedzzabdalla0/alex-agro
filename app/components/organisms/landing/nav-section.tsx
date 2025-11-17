@@ -29,7 +29,7 @@ export default function NavSection() {
         {/* Left: Logo */}
         <div>
           <Link href="/" className="block w-14 mobile:w-fit">
-            <Image src={Logo} alt="alex-agro-logo" />
+            <Image src={Logo} alt="alex-agro-logo" loading="eager" />
           </Link>
         </div>
 
