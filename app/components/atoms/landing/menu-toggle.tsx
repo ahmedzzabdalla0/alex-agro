@@ -22,11 +22,8 @@ export default function MenuToggle({ className, ...props }: MyProps) {
         role="button"
         {...props}
       >
-        <AiOutlineMenu size={24} className="group-[.peer:checked~&]:hidden" />
-        <AiOutlineClose
-          size={20}
-          className="hidden group-[.peer:checked~&]:block"
-        />
+        <AiOutlineMenu size={24} className="group-peer-checked:hidden" />
+        <AiOutlineClose size={20} className="hidden group-peer-checked:block" />
       </label>
     </>
   );

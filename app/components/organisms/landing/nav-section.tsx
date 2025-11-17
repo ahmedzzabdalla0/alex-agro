@@ -39,7 +39,7 @@ export default function NavSection() {
         {/* Navigation Menu (Links + Contact Button) */}
         <div className="group contents h-full w-full">
           {/* Mobile Overlay Background */}
-          <div className="pointer-events-none fixed inset-0 -z-1 bg-neutral-background opacity-0 transition-opacity max-mobile:group-[.peer:checked~&]:pointer-events-auto max-mobile:group-[.peer:checked~&]:opacity-100"></div>
+          <div className="pointer-events-none fixed inset-0 -z-1 bg-neutral-background opacity-0 transition-opacity max-mobile:group-peer-checked:pointer-events-auto max-mobile:group-peer-checked:opacity-100"></div>
 
           {/* Menu Container (Responsive) */}
           <div
@@ -48,7 +48,7 @@ export default function NavSection() {
               "flex",
 
               // Mobile behavior
-              "inset-x-0 top-full gap-y-4 max-mobile:absolute max-mobile:-z-1 max-mobile:flex-col max-mobile:opacity-0 max-mobile:transition-opacity max-mobile:group-not-[.peer:checked~&]:pointer-events-none max-mobile:group-[.peer:checked~&]:opacity-100",
+              "inset-x-0 top-full gap-y-4 max-mobile:absolute max-mobile:-z-1 max-mobile:flex-col max-mobile:opacity-0 max-mobile:transition-opacity max-mobile:group-peer-not-checked:pointer-events-none max-mobile:group-peer-checked:opacity-100",
 
               // Tablet & up
               "mobile:contents",
