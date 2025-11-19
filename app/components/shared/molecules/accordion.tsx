@@ -33,11 +33,11 @@ export default function Accordion({
         className="group block rounded-7 border border-secondary-100 p-4 peer-not-checked:clickable mobile:p-6"
       >
         {/* Head */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-x-2">
           <p className="text-neutral font-b-13">{title}</p>
           <IoIosArrowDropright
             className={twMerge(
-              "text-2xl text-secondary-200 transition-transform group-peer-checked:rotate-90 tablet:text-[36px]",
+              "shrink-0 text-2xl text-secondary-200 transition-transform group-peer-checked:rotate-90 tablet:text-[36px]",
             )}
           />
         </div>
