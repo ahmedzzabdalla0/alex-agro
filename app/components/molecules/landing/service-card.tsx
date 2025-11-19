@@ -22,7 +22,7 @@ export default function ServiceCard({
       style={{ boxShadow: "0px 4px 4px 0px rgba(237, 238, 227, 1)" }}
     >
       {/* Image */}
-      <div className="relative min-h-[150px] overflow-hidden rounded-4 pt-[55%]">
+      <div className="relative h-full min-h-[150px] overflow-hidden rounded-4 pt-[55%]">
         <Image
           src={imageSrc}
           alt={alt}
