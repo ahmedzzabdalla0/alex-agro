@@ -1,0 +1,155 @@
+{
+  "Metadata": {
+    "title": {
+      "default": "Alex Agro",
+      "home": "Home Page"
+    },
+    "description": {
+      "default": "Alex Agro, a leading Egyptian company in fertilizers and agricultural consulting, provides high-quality products and smart solutions to enhance soil health, boost crop yields, and promote sustainable growth."
+    }
+  },
+
+  "Navigation": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "products": "Products",
+    "services": "Services",
+    "faqs": "FAQs",
+    "contact": "Contact Us"
+  },
+
+  "LandingPage": {
+    "Hero": {
+      "subtitle": "Smart solutions for sustainable growth.",
+      "title": "Cultivating Knowledge, Harvesting the Future",
+      "description": "Alex Agro is an Egyptian leader in fertilizers and agricultural consulting, offering quality products and smart solutions to improve soil and increase yields.",
+      "ctaContact": "Contact Us",
+      "ctaServices": "See All Services",
+      "scrollDown": "SCROLL DOWN",
+      "tags": {
+        "agriTech": "AgriTech",
+        "ecoFriendly": "Eco-Friendly",
+        "precisionFarming": "Precision Farming",
+        "sustainableFarming": "Sustainable Farming",
+        "soilHealth": "Soil Health",
+        "naturalFertilizers": "Natural Fertilizers"
+      }
+    }
+  },
+
+  "ServicesSection": {
+    "label": "Our Services",
+    "title": "Our services for your business",
+    "consulting": {
+      "title": "Agricultural Consulting",
+      "subtitle": "Agro Support",
+      "description": "Field-based technical support from our agronomists to ensure sustainable growth."
+    },
+    "soil": {
+      "title": "Soil Enhancement",
+      "subtitle": "Soil Fertility Solutions",
+      "description": "Innovative programs to restore soil health and boost crop productivity naturally."
+    },
+    "feeding": {
+      "title": "Smart Feeding",
+      "subtitle": "Crop Nutrition Programs",
+      "description": "Tailored nutrition plans designed to maximize yield and reduce farming costs."
+    }
+  },
+
+  "AboutSection": {
+    "label": "About Us",
+    "title": "Leading agriculture in Egypt",
+    "features": {
+      "fertilizers": {
+        "title": "Scientific Fertilizer Solutions",
+        "description": "High-quality imported and locally produced fertilizers designed to enrich soil and maximize productivity."
+      },
+      "consulting": {
+        "title": "Expert Agricultural Consulting",
+        "description": "Tailored programs and on-ground support from experienced agronomists to help farmers achieve consistent, profitable growth."
+      }
+    },
+    "provenExcellence": {
+      "title": "Proven Excellence",
+      "description": "Alex Agro is a trusted Egyptian company specializing in fertilizers and integrated agricultural consulting. We combine scientific research with field expertise to provide sustainable solutions that improve soil fertility, enhance crop yields, and reduce farming costs."
+    },
+    "ctaDiscover": "Discover More"
+  },
+
+  "ProductsSection": {
+    "label": "Our Products",
+    "title": "Explore Our Core Products",
+    "ctaGeneral": "See Products",
+    "ctaItem": "Learn More",
+    "ariaLearnMore": "Learn more about {productTitle} product",
+    "items": {
+      "agroSol": {
+        "title": "Salinity Reduction",
+        "description": "Improves root strength & salinity tolerance."
+      },
+      "nemaFight": {
+        "title": "Soil Sterilization",
+        "description": "Eliminates nematodes & restores soil balance."
+      },
+      "agroPlus": {
+        "title": "Growth & Yield Enhancer",
+        "description": "Boosts vegetative growth & fruit production."
+      }
+    }
+  },
+
+  "FaqSection": {
+    "label": "Frequently Asked Questions",
+    "title": "How can we help you today?",
+    "ctaGeneral": "Read More",
+    "questions": {
+      "servicesProvided": {
+        "q": "What services does Alex Agro provide?",
+        "a": "We offer high-quality fertilizers, soil improvement solutions, and professional agricultural consulting tailored to each crop’s needs."
+      },
+      "onSiteSupport": {
+        "q": "Do you provide on-site agricultural support?",
+        "a": "Yes, our experienced agronomists provide field-based technical support and consulting services directly on your farm."
+      },
+      "salinityHelp": {
+        "q": "Can Alex Agro help with soil salinity problems?",
+        "a": "Absolutely. We offer specialized products like Agro Sol and comprehensive programs aimed at reducing salinity, improving root health, and enhancing tolerance in crops."
+      },
+      "cropSuitability": {
+        "q": "Are your fertilizers suitable for all types of crops?",
+        "a": "Our range includes specialty fertilizers designed for various crops. We provide customized nutrition plans to ensure suitability and maximum benefit for your specific cultivation."
+      }
+    }
+  },
+
+  "CtaSection": {
+    "headline": "Grow Smarter, Not Harder.",
+    "description": "Discover innovative tools and technologies that simplify farming while maximizing yields.",
+    "ctaButton": "contact us"
+  },
+
+  "Footer": {
+    "description": "The company focuses on importing, manufacturing, and supplying high-quality, specialized agricultural fertilizer raw materials, and providing scientific and practical solutions to soil salinity problems and land fertility improvement.",
+    "companyHeading": "Company",
+    "helpHeading": "Help",
+    "links": {
+      "home": "Home",
+      "aboutUs": "About Us",
+      "services": "Services",
+      "products": "Products",
+      "contact": "Contact Us",
+      "faq": "FAQ",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy"
+    },
+    "ariaLinkLabel": "{label} link",
+    "socialLabels": {
+      "facebook": "facebook",
+      "instagram": "instagram",
+      "whatsapp": "whatsapp",
+      "linkedin": "linkedin"
+    },
+    "copyright": "© Copyright {year}, Alexagro All Rights Reserved"
+  }
+}
