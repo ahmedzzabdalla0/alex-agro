@@ -5,7 +5,7 @@ export const inter = Inter({
   weight: ["400", "500", "600", "700"],
   display: "swap",
   adjustFontFallback: false,
-  variable: "--font-inter",
+  variable: "--font-primary",
 });
 
 export const oxanium = Oxanium({
@@ -13,5 +13,12 @@ export const oxanium = Oxanium({
   weight: ["700"],
   display: "swap",
   adjustFontFallback: false,
-  variable: "--font-oxanium",
+  variable: "--font-label",
 });
+
+const defualtFonts = {
+  primary: inter,
+  label: oxanium,
+};
+
+export default defualtFonts;

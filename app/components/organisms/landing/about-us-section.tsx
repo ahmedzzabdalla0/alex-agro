@@ -5,12 +5,14 @@ import patternImage from "@/assets/landing/patterns/pattern-1.png";
 import Subtitle from "@/components/atoms/landing/subtitle";
 import AboutUsItem from "@/components/molecules/landing/about-us-item";
 import Button from "@/components/shared/atoms/button";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { GrUserWorker } from "react-icons/gr";
 import { PiTractor } from "react-icons/pi";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 
 export default function AboutUsSection() {
+  const t = useTranslations("AboutSection");
   return (
     <section
       id="about-us"
@@ -20,13 +22,13 @@ export default function AboutUsSection() {
       <Image
         src={gradientImage}
         alt="gradient-1"
-        className="absolute top-0 left-0 select-none"
+        className="absolute top-0 select-none ltr:left-0 rtl:right-0 rtl:-scale-x-100"
         fetchPriority="low"
       />
       <Image
         src={gradientImage}
         alt="gradient-1"
-        className="absolute right-0 bottom-0 -rotate-180 select-none"
+        className="absolute bottom-0 -rotate-180 select-none ltr:right-0 rtl:left-0 rtl:-scale-x-100 rtl:rotate-180"
         fetchPriority="low"
       />
 
@@ -34,14 +36,14 @@ export default function AboutUsSection() {
       <Image
         src={patternImage}
         alt="pattern-1"
-        className="absolute -top-[30px] -left-[150px] rotate-165 opacity-10 select-none mobile:-top-[60px] mobile:-left-[250px]"
+        className="absolute -top-[30px] rotate-165 opacity-10 select-none mobile:-top-[60px] ltr:-left-[150px] ltr:mobile:-left-[250px] rtl:-right-[150px] rtl:-scale-x-100 rtl:-rotate-165 rtl:mobile:-right-[250px]"
         fetchPriority="low"
       />
 
       <Image
         src={patternImage}
         alt="pattern-1"
-        className="absolute -right-20 -bottom-[60px] -rotate-15 opacity-10 select-none mobile:-right-[481px] mobile:-bottom-[273px]"
+        className="absolute -bottom-[60px] -rotate-15 opacity-10 select-none mobile:-bottom-[273px] ltr:-right-20 ltr:mobile:-right-[481px] rtl:-left-20 rtl:-scale-x-100 rtl:rotate-15 rtl:mobile:-left-[481px]"
         fetchPriority="low"
       />
 
@@ -51,23 +53,21 @@ export default function AboutUsSection() {
         <div className="w-full">
           {/* Heading */}
           <div className="flex flex-col gap-y-3 mobile:gap-y-2">
-            <Subtitle>About Us</Subtitle>
-            <h2 className="text-neutral font-h-5">
-              Leading agriculture in Egypt
-            </h2>
+            <Subtitle>{t("label")}</Subtitle>
+            <h2 className="text-neutral font-h-5">{t("title")}</h2>
           </div>
 
           {/* List */}
           <div className="mt-6 flex flex-col gap-y-6 mobile:mt-10">
             <AboutUsItem
               icon={PiTractor}
-              title="Scientific Fertilizer Solutions"
-              description="High-quality imported and locally produced fertilizers designed to enrich soil and maximize productivity."
+              title={t("features.fertilizers.title")}
+              description={t("features.fertilizers.description")}
             />
             <AboutUsItem
               icon={GrUserWorker}
-              title="Expert Agricultural Consulting"
-              description="Tailored programs and on-ground support from experienced agronomists to help farmers achieve consistent, profitable growth."
+              title={t("features.consulting.title")}
+              description={t("features.consulting.description")}
             />
           </div>
 
@@ -100,20 +100,18 @@ export default function AboutUsSection() {
               {/* Heading */}
               <div className="flex items-center gap-x-2">
                 <RiVerifiedBadgeFill className="text-[20px] text-primary mobile:text-2xl" />
-                <h3 className="text-neutral font-b-1">Proven Excellence</h3>
+                <h3 className="text-neutral font-b-1">
+                  {t("provenExcellence.title")}
+                </h3>
               </div>
 
               {/* Body */}
               <p className="mt-2 max-w-[343px] text-neutral font-b-16 target:max-w-[452px] mobile:mt-4 desktop:max-w-[580px]">
-                Alex Agro is a trusted Egyptian company specializing in
-                fertilizers and integrated agricultural consulting. We combine
-                scientific research with field expertise to provide sustainable
-                solutions that improve soil fertility, enhance crop yields, and
-                reduce farming costs.
+                {t("provenExcellence.description")}
               </p>
 
               {/* Discover More Button */}
-              <Button className="mt-6 desktop:mt-8">Discover More</Button>
+              <Button className="mt-6 desktop:mt-8">{t("ctaDiscover")}</Button>
             </div>
           </div>
         </div>

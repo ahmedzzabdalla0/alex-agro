@@ -3,37 +3,37 @@ import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
 
 export const companyLinks = [
   {
-    label: "Home",
+    label: "home",
     href: "#",
   },
   {
-    label: "About Us",
+    label: "aboutUs",
     href: "#",
   },
   {
-    label: "Services",
+    label: "services",
     href: "#",
   },
   {
-    label: "Products",
+    label: "products",
     href: "#",
   },
   {
-    label: "Contact Us",
+    label: "contact",
     href: "#",
   },
 ];
 export const helpLinks = [
   {
-    label: "FAQ",
+    label: "faq",
     href: "#",
   },
   {
-    label: "Terms & Conditions",
+    label: "terms",
     href: "#",
   },
   {
-    label: "Privacy Policy",
+    label: "privacy",
     href: "#",
   },
 ];

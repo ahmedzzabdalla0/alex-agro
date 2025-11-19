@@ -1,7 +1,8 @@
 import Button from "@/components/shared/atoms/button";
+import { useTranslations } from "next-intl";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { twMerge } from "tailwind-merge";
 
 interface MyProps {
@@ -19,6 +20,7 @@ export default function ProductCard({
   title,
   description,
 }: MyProps) {
+  const t = useTranslations("ProductsSection");
   return (
     <div
       className={twMerge(
@@ -61,12 +63,12 @@ export default function ProductCard({
         {/* Link */}
         <div className="flex items-center justify-between">
           <Link href={"#"} className="text-primary font-b-19">
-            Learn More
+            {t("ctaItem")}
           </Link>
           <Button
             as={Link}
             href={"#"}
-            aria-label={`Learn more about ${title} product`}
+            aria-label={t("ariaLearnMore", { productTitle: title })}
           />
         </div>
       </div>

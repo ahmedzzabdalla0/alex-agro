@@ -62,11 +62,11 @@
   --breakpoint-large-desktop: 1720px;
 
   /* Font Weights */
-  --font-weight-inter-0: 400;
-  --font-weight-inter-1: 500;
-  --font-weight-inter-2: 600;
-  --font-weight-inter-3: 700;
-  --font-weight-oxanium-0: 700;
+  --font-weight-primary-0: 400;
+  --font-weight-primary-1: 500;
+  --font-weight-primary-2: 600;
+  --font-weight-primary-3: 700;
+  --font-weight-label-0: 700;
 
   /* Line Heights */
   --leading-0: 5.5rem; /* 88px */
@@ -143,161 +143,161 @@
   --radius-8: 1.5rem; /* 24px */
 
   /* Font Variables */
-  --font-website-h-1: var(--font-weight-inter-2) var(--font-size-13) /
-    var(--leading-0) var(--font-inter);
-  --font-website-h-2: var(--font-weight-inter-3) var(--font-size-12) /
-    var(--leading-1) var(--font-inter);
-  --font-website-h-3: var(--font-weight-inter-3) var(--font-size-11) /
-    var(--leading-2) var(--font-inter);
-  --font-website-h-4: var(--font-weight-inter-3) var(--font-size-10) /
-    var(--leading-1) var(--font-inter);
-  --font-website-h-5: var(--font-weight-inter-3) var(--font-size-9) /
-    var(--leading-4) var(--font-inter);
-  --font-website-h-6: var(--font-weight-inter-3) var(--font-size-7) /
-    var(--leading-5) var(--font-inter);
-  --font-website-b-1: var(--font-weight-inter-3) var(--font-size-6) /
-    var(--leading-6) var(--font-inter);
-  --font-website-b-2: var(--font-weight-inter-2) var(--font-size-6) /
-    var(--leading-6) var(--font-inter);
-  --font-website-b-3: var(--font-weight-inter-1) var(--font-size-6) /
-    var(--leading-6) var(--font-inter);
-  --font-website-b-4: var(--font-weight-inter-0) var(--font-size-6) /
-    var(--leading-6) var(--font-inter);
-  --font-website-b-5: var(--font-weight-inter-3) var(--font-size-4) /
-    var(--leading-10) var(--font-inter);
-  --font-website-b-6: var(--font-weight-inter-2) var(--font-size-4) /
-    var(--leading-10) var(--font-inter);
-  --font-website-b-7: var(--font-weight-inter-1) var(--font-size-4) /
-    var(--leading-10) var(--font-inter);
-  --font-website-b-8: var(--font-weight-inter-0) var(--font-size-4) /
-    var(--leading-10) var(--font-inter);
-  --font-website-b-9: var(--font-weight-inter-3) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-website-b-10: var(--font-weight-inter-2) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-website-b-11: var(--font-weight-inter-1) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-website-b-12: var(--font-weight-inter-0) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-website-b-13: var(--font-weight-inter-3) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-website-b-14: var(--font-weight-inter-2) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-website-b-15: var(--font-weight-inter-1) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-website-b-16: var(--font-weight-inter-0) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-website-b-17: var(--font-weight-inter-3) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-website-b-18: var(--font-weight-inter-2) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-website-b-19: var(--font-weight-inter-1) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-website-b-20: var(--font-weight-inter-0) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-website-b-21: var(--font-weight-inter-3) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-website-b-22: var(--font-weight-inter-2) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-website-b-23: var(--font-weight-inter-1) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-website-b-24: var(--font-weight-inter-0) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-tablet-h-1: var(--font-weight-inter-3) var(--font-size-10) /
-    var(--leading-4) var(--font-inter);
-  --font-tablet-h-2: var(--font-weight-inter-3) var(--font-size-9) /
-    var(--leading-4) var(--font-inter);
-  --font-tablet-h-3: var(--font-weight-inter-3) var(--font-size-8) /
-    var(--leading-32) var(--font-inter);
-  --font-tablet-h-4: var(--font-weight-inter-3) var(--font-size-7) /
-    var(--leading-5) var(--font-inter);
-  --font-tablet-h-5: var(--font-weight-inter-3) var(--font-size-6) /
-    var(--leading-6) var(--font-inter);
-  --font-tablet-h-6: var(--font-weight-inter-3) var(--font-size-4) /
-    var(--leading-10) var(--font-inter);
-  --font-tablet-b-1: var(--font-weight-inter-3) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-tablet-b-2: var(--font-weight-inter-2) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-tablet-b-3: var(--font-weight-inter-1) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-tablet-b-4: var(--font-weight-inter-0) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-tablet-b-5: var(--font-weight-inter-3) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-tablet-b-6: var(--font-weight-inter-2) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-tablet-b-7: var(--font-weight-inter-1) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-tablet-b-8: var(--font-weight-inter-0) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-tablet-b-13: var(--font-weight-inter-3) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-tablet-b-14: var(--font-weight-inter-2) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-tablet-b-15: var(--font-weight-inter-1) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-tablet-b-16: var(--font-weight-inter-0) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-tablet-b-17: var(--font-weight-inter-3) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-tablet-b-18: var(--font-weight-inter-2) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-tablet-b-19: var(--font-weight-inter-1) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-tablet-b-20: var(--font-weight-inter-0) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-mobile-h-1: var(--font-weight-inter-3) var(--font-size-6) /
-    var(--leading-6) var(--font-inter);
-  --font-mobile-h-2: var(--font-weight-inter-3) var(--font-size-5) /
-    var(--leading-53) var(--font-inter);
-  --font-mobile-h-3: var(--font-weight-inter-3) var(--font-size-4) /
-    var(--leading-10) var(--font-inter);
-  --font-mobile-h-4: var(--font-weight-inter-3) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-mobile-h-5: var(--font-weight-inter-3) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-mobile-h-6: var(--font-weight-inter-3) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-mobile-b-1: var(--font-weight-inter-3) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-mobile-b-2: var(--font-weight-inter-2) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-mobile-b-3: var(--font-weight-inter-1) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-mobile-b-4: var(--font-weight-inter-0) var(--font-size-3) /
-    var(--leading-14) var(--font-inter);
-  --font-mobile-b-5: var(--font-weight-inter-3) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-mobile-b-6: var(--font-weight-inter-2) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-mobile-b-7: var(--font-weight-inter-1) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-mobile-b-8: var(--font-weight-inter-0) var(--font-size-2) /
-    var(--leading-18) var(--font-inter);
-  --font-mobile-b-13: var(--font-weight-inter-3) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-mobile-b-14: var(--font-weight-inter-2) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-mobile-b-15: var(--font-weight-inter-1) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-mobile-b-16: var(--font-weight-inter-0) var(--font-size-1) /
-    var(--leading-22) var(--font-inter);
-  --font-mobile-b-17: var(--font-weight-inter-3) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-mobile-b-18: var(--font-weight-inter-2) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-mobile-b-19: var(--font-weight-inter-1) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
-  --font-mobile-b-20: var(--font-weight-inter-0) var(--font-size-0) /
-    var(--leading-26) var(--font-inter);
+  --font-website-h-1: var(--font-weight-primary-2) var(--font-size-13) /
+    var(--leading-0) var(--font-primary);
+  --font-website-h-2: var(--font-weight-primary-3) var(--font-size-12) /
+    var(--leading-1) var(--font-primary);
+  --font-website-h-3: var(--font-weight-primary-3) var(--font-size-11) /
+    var(--leading-2) var(--font-primary);
+  --font-website-h-4: var(--font-weight-primary-3) var(--font-size-10) /
+    var(--leading-1) var(--font-primary);
+  --font-website-h-5: var(--font-weight-primary-3) var(--font-size-9) /
+    var(--leading-4) var(--font-primary);
+  --font-website-h-6: var(--font-weight-primary-3) var(--font-size-7) /
+    var(--leading-5) var(--font-primary);
+  --font-website-b-1: var(--font-weight-primary-3) var(--font-size-6) /
+    var(--leading-6) var(--font-primary);
+  --font-website-b-2: var(--font-weight-primary-2) var(--font-size-6) /
+    var(--leading-6) var(--font-primary);
+  --font-website-b-3: var(--font-weight-primary-1) var(--font-size-6) /
+    var(--leading-6) var(--font-primary);
+  --font-website-b-4: var(--font-weight-primary-0) var(--font-size-6) /
+    var(--leading-6) var(--font-primary);
+  --font-website-b-5: var(--font-weight-primary-3) var(--font-size-4) /
+    var(--leading-10) var(--font-primary);
+  --font-website-b-6: var(--font-weight-primary-2) var(--font-size-4) /
+    var(--leading-10) var(--font-primary);
+  --font-website-b-7: var(--font-weight-primary-1) var(--font-size-4) /
+    var(--leading-10) var(--font-primary);
+  --font-website-b-8: var(--font-weight-primary-0) var(--font-size-4) /
+    var(--leading-10) var(--font-primary);
+  --font-website-b-9: var(--font-weight-primary-3) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-website-b-10: var(--font-weight-primary-2) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-website-b-11: var(--font-weight-primary-1) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-website-b-12: var(--font-weight-primary-0) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-website-b-13: var(--font-weight-primary-3) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-website-b-14: var(--font-weight-primary-2) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-website-b-15: var(--font-weight-primary-1) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-website-b-16: var(--font-weight-primary-0) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-website-b-17: var(--font-weight-primary-3) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-website-b-18: var(--font-weight-primary-2) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-website-b-19: var(--font-weight-primary-1) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-website-b-20: var(--font-weight-primary-0) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-website-b-21: var(--font-weight-primary-3) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-website-b-22: var(--font-weight-primary-2) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-website-b-23: var(--font-weight-primary-1) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-website-b-24: var(--font-weight-primary-0) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-tablet-h-1: var(--font-weight-primary-3) var(--font-size-10) /
+    var(--leading-4) var(--font-primary);
+  --font-tablet-h-2: var(--font-weight-primary-3) var(--font-size-9) /
+    var(--leading-4) var(--font-primary);
+  --font-tablet-h-3: var(--font-weight-primary-3) var(--font-size-8) /
+    var(--leading-32) var(--font-primary);
+  --font-tablet-h-4: var(--font-weight-primary-3) var(--font-size-7) /
+    var(--leading-5) var(--font-primary);
+  --font-tablet-h-5: var(--font-weight-primary-3) var(--font-size-6) /
+    var(--leading-6) var(--font-primary);
+  --font-tablet-h-6: var(--font-weight-primary-3) var(--font-size-4) /
+    var(--leading-10) var(--font-primary);
+  --font-tablet-b-1: var(--font-weight-primary-3) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-tablet-b-2: var(--font-weight-primary-2) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-tablet-b-3: var(--font-weight-primary-1) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-tablet-b-4: var(--font-weight-primary-0) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-tablet-b-5: var(--font-weight-primary-3) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-tablet-b-6: var(--font-weight-primary-2) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-tablet-b-7: var(--font-weight-primary-1) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-tablet-b-8: var(--font-weight-primary-0) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-tablet-b-13: var(--font-weight-primary-3) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-tablet-b-14: var(--font-weight-primary-2) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-tablet-b-15: var(--font-weight-primary-1) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-tablet-b-16: var(--font-weight-primary-0) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-tablet-b-17: var(--font-weight-primary-3) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-tablet-b-18: var(--font-weight-primary-2) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-tablet-b-19: var(--font-weight-primary-1) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-tablet-b-20: var(--font-weight-primary-0) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-mobile-h-1: var(--font-weight-primary-3) var(--font-size-6) /
+    var(--leading-6) var(--font-primary);
+  --font-mobile-h-2: var(--font-weight-primary-3) var(--font-size-5) /
+    var(--leading-53) var(--font-primary);
+  --font-mobile-h-3: var(--font-weight-primary-3) var(--font-size-4) /
+    var(--leading-10) var(--font-primary);
+  --font-mobile-h-4: var(--font-weight-primary-3) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-mobile-h-5: var(--font-weight-primary-3) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-mobile-h-6: var(--font-weight-primary-3) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-mobile-b-1: var(--font-weight-primary-3) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-mobile-b-2: var(--font-weight-primary-2) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-mobile-b-3: var(--font-weight-primary-1) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-mobile-b-4: var(--font-weight-primary-0) var(--font-size-3) /
+    var(--leading-14) var(--font-primary);
+  --font-mobile-b-5: var(--font-weight-primary-3) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-mobile-b-6: var(--font-weight-primary-2) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-mobile-b-7: var(--font-weight-primary-1) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-mobile-b-8: var(--font-weight-primary-0) var(--font-size-2) /
+    var(--leading-18) var(--font-primary);
+  --font-mobile-b-13: var(--font-weight-primary-3) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-mobile-b-14: var(--font-weight-primary-2) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-mobile-b-15: var(--font-weight-primary-1) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-mobile-b-16: var(--font-weight-primary-0) var(--font-size-1) /
+    var(--leading-22) var(--font-primary);
+  --font-mobile-b-17: var(--font-weight-primary-3) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-mobile-b-18: var(--font-weight-primary-2) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-mobile-b-19: var(--font-weight-primary-1) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
+  --font-mobile-b-20: var(--font-weight-primary-0) var(--font-size-0) /
+    var(--leading-26) var(--font-primary);
 
-  --font-website-label: var(--font-weight-oxanium-0) var(--font-size-6) /
-    var(--leading-6) var(--font-oxanium);
-  --font-tablet-label: var(--font-weight-oxanium-0) var(--font-size-2) /
-    var(--leading-18) var(--font-oxanium);
-  --font-mobile-label: var(--font-weight-oxanium-0) var(--font-size-2) /
-    var(--leading-18) var(--font-oxanium);
+  --font-website-label: var(--font-weight-label-0) var(--font-size-6) /
+    var(--leading-6) var(--font-label);
+  --font-tablet-label: var(--font-weight-label-0) var(--font-size-2) /
+    var(--leading-18) var(--font-label);
+  --font-mobile-label: var(--font-weight-label-0) var(--font-size-2) /
+    var(--leading-18) var(--font-label);
 }
 
 /* Fonts */

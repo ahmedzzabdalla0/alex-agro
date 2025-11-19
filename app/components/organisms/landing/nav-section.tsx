@@ -3,19 +3,22 @@ import NavVector from "@/assets/shared/vectors/nav";
 import MenuToggle from "@/components/atoms/landing/menu-toggle";
 import ActiveLink from "@/components/shared/atoms/active-link";
 import Button from "@/components/shared/atoms/button";
+import LangSwitcher from "@/components/shared/atoms/lang-switcher";
 import Link from "@/components/shared/atoms/link";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
 export default function NavSection() {
+  const t = useTranslations("Navigation");
   // No need for useMemo here since this code runs on the server.
   const Links = (
     <>
-      <ActiveLink href="/">Home</ActiveLink>
-      <ActiveLink href="/about-us">About Us</ActiveLink>
-      <ActiveLink href="/products">Products</ActiveLink>
-      <ActiveLink href="/services">Services</ActiveLink>
-      <ActiveLink href="/faqs">FAQs</ActiveLink>
+      <ActiveLink href="/">{t("home")}</ActiveLink>
+      <ActiveLink href="/about-us">{t("aboutUs")}</ActiveLink>
+      <ActiveLink href="/products">{t("products")}</ActiveLink>
+      <ActiveLink href="/services">{t("services")}</ActiveLink>
+      <ActiveLink href="/faqs">{t("faqs")}</ActiveLink>
     </>
   );
 
@@ -33,8 +36,10 @@ export default function NavSection() {
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle Icon */}
-        <MenuToggle className="text-neutral mobile:hidden" />
+        {/* Mobile Menu Toggle Icon & Lang Switcher */}
+
+        <MenuToggle className="order-3 text-neutral mobile:hidden" />
+        <LangSwitcher className="order-2 mr-2 ml-auto p-2 peer-not-checked:hidden rtl:mr-auto rtl:ml-2" />
 
         {/* Navigation Menu (Links + Contact Button) */}
         <div className="group contents h-full w-full">
@@ -70,9 +75,10 @@ export default function NavSection() {
               {Links}
             </div>
 
-            {/* Contact Button */}
-            <div className="ms-4 justify-self-end mobile:ms-0">
-              <Button>Contact Us</Button>
+            {/* Contact Button & Lang Switcher */}
+            <div className="ms-4 flex items-center gap-x-6 justify-self-end mobile:ms-0">
+              <Button>{t("contact")}</Button>
+              <LangSwitcher className="max-mobile:hidden" />
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import { Link as NavLink } from "@/i18n/navigation";
 import type { LinkHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -13,7 +13,7 @@ export default function Link({
   className,
 }: MyProps) {
   return (
-    <NextLink
+    <NavLink
       href={href}
       className={twMerge(
         "text-neutral-700 transition-colors font-b-15 hover:text-primary",
@@ -22,6 +22,6 @@ export default function Link({
       )}
     >
       {children}
-    </NextLink>
+    </NavLink>
   );
 }

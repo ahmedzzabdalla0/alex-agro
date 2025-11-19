@@ -5,8 +5,10 @@ import Image from "next/image";
 import productOneImage from "@/assets/shared/images/products/1.png";
 import productTwoImage from "@/assets/shared/images/products/2.png";
 import Button from "@/components/shared/atoms/button";
+import { useTranslations } from "next-intl";
 
 export default function ProductsSection() {
+  const t = useTranslations("ProductsSection");
   return (
     <section
       id="our-products"
@@ -16,7 +18,7 @@ export default function ProductsSection() {
       <Image
         src={patternImage}
         alt="pattern-2"
-        className="object-cover select-none"
+        className="object-cover select-none rtl:-scale-x-100"
         fill
       />
 
@@ -24,34 +26,34 @@ export default function ProductsSection() {
       <div className="relative container">
         {/* Heading */}
         <div className="flex flex-col items-center gap-y-3 mobile:gap-y-2">
-          <Subtitle>Our Products</Subtitle>
-          <h2 className="text-neutral font-h-5">Explore Our Core Products</h2>
+          <Subtitle>{t("label")}</Subtitle>
+          <h2 className="text-neutral font-h-5">{t("title")}</h2>
         </div>
 
         {/* Product Cards */}
         <div className="flex snap-x snap-mandatory grid-cols-[repeat(3,auto)] gap-x-4 overflow-x-auto overflow-y-visible mobile:mt-8 mobile:grid mobile:justify-center">
           <ProductCard
             productImage={productOneImage}
-            category="Growth & Yield Enhancer"
+            category={t("items.agroSol.title")}
             title="Agro Plus"
-            description="Boosts vegetative growth & fruit production."
+            description={t("items.agroSol.description")}
           />
           <ProductCard
             productImage={productTwoImage}
-            category="Soil Sterilization"
+            category={t("items.agroSol.title")}
             title="Nema Fight"
-            description="Eliminates nematodes & restores soil balance."
+            description={t("items.nemaFight.title")}
           />
           <ProductCard
             productImage={productOneImage}
-            category="Salinity Reduction"
+            category={t("items.agroSol.title")}
             title="Agro Sol"
-            description="Improves root strength & salinity tolerance."
+            description={t("items.agroSol.title")}
           />
         </div>
 
         {/* See Products Button */}
-        <Button className="mx-auto">See Products</Button>
+        <Button className="mx-auto">{t("ctaGeneral")}</Button>
       </div>
     </section>
   );

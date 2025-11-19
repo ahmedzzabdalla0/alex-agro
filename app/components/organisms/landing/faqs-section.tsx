@@ -2,8 +2,17 @@ import patternImage from "@/assets/landing/patterns/pattern-3.png";
 import Subtitle from "@/components/atoms/landing/subtitle";
 import Accordion from "@/components/shared/molecules/accordion";
 import Button from "@/components/shared/atoms/button";
+import { useTranslations } from "next-intl";
 
 export default function FAQsSection() {
+  const t = useTranslations("FaqSection");
+  const questions = [
+    "servicesProvided",
+    "onSiteSupport",
+    "salinityHelp",
+    "cropSuitability",
+  ];
+
   return (
     <section
       id="our-products"
@@ -19,32 +28,23 @@ export default function FAQsSection() {
       <div className="relative container flex gap-y-6 max-mobile:flex-col mobile:gap-x-10 tablet:gap-x-14">
         {/* Heading */}
         <div>
-          <Subtitle>Frequently Asked Questions</Subtitle>
+          <Subtitle>{t("label")}</Subtitle>
           <h2 className="mt-2 max-w-[466px] text-neutral font-h-5">
-            How can we help you today?
+            {t("title")}
           </h2>
-          <Button className="mt-6 mobile:mt-10">Read More</Button>
+          <Button className="mt-6 mobile:mt-10">{t("ctaGeneral")}</Button>
         </div>
 
         {/* Questions */}
         <div className="ms-auto max-w-[800px] space-y-4 mobile:space-y-6">
-          <Accordion
-            title="What services does Alex Agro provide?"
-            description="We offer high-quality fertilizers, soil improvement solutions, and professional agricultural consulting tailored to each crop’s needs."
-            defaultOpen
-          />
-          <Accordion
-            title="Do you provide on-site agricultural support?"
-            description="We offer high-quality fertilizers, soil improvement solutions, and professional agricultural consulting tailored to each crop’s needs."
-          />
-          <Accordion
-            title="Can Alex Agro help with soil salinity problems?"
-            description="We offer high-quality fertilizers, soil improvement solutions, and professional agricultural consulting tailored to each crop’s needs."
-          />
-          <Accordion
-            title="Are your fertilizers suitable for all types of crops?"
-            description="We offer high-quality fertilizers, soil improvement solutions, and professional agricultural consulting tailored to each crop’s needs."
-          />
+          {questions.map((q, index) => (
+            <Accordion
+              key={t(`questions.${q}.q`) + index}
+              title={t(`questions.${q}.q`)}
+              description={t(`questions.${q}.a`)}
+              defaultOpen={index === 0}
+            />
+          ))}
         </div>
       </div>
     </section>

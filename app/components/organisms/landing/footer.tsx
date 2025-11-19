@@ -6,9 +6,11 @@ import {
   helpLinks,
   socialMediaLinks,
 } from "@/constants/landing/footer";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
   return (
     <footer
       id="footer"
@@ -20,17 +22,14 @@ export default function Footer() {
           <div className="space-y-4">
             <Image src={logo} alt="logo-png" />
             <p className="max-w-[430px] text-neutral-100 font-b-16">
-              The company focuses on importing, manufacturing, and supplying
-              high-quality, specialized agricultural fertilizer raw materials,
-              and providing scientific and practical solutions to soil salinity
-              problems and land fertility improvement.
+              {t("description")}
             </p>
           </div>
 
           <div className="flex gap-x-12 mobile:gap-x-10">
             <div>
               {/* Header */}
-              <p className="mb-6 text-white font-b-13">Company</p>
+              <p className="mb-6 text-white font-b-13">{t("companyHeading")}</p>
 
               <div className="space-y-4">
                 {companyLinks.map((i, index) => (
@@ -39,7 +38,7 @@ export default function Footer() {
                     href={i.href}
                     className="block text-neutral-300 font-b-16"
                   >
-                    {i.label}
+                    {t(`links.${i.label}`)}
                   </Link>
                 ))}
               </div>
@@ -47,7 +46,7 @@ export default function Footer() {
 
             <div>
               {/* Header */}
-              <p className="mb-6 text-white font-b-13">Help</p>
+              <p className="mb-6 text-white font-b-13">{t("helpHeading")}</p>
 
               <div className="space-y-4">
                 {helpLinks.map((i, index) => (
@@ -56,7 +55,7 @@ export default function Footer() {
                     href={i.href}
                     className="block text-neutral-300 font-b-16"
                   >
-                    {i.label}
+                    {t(`links.${i.label}`)}
                   </Link>
                 ))}
               </div>
@@ -66,7 +65,7 @@ export default function Footer() {
 
         <div className="flex justify-between gap-y-6 border-t border-neutral-300 pt-6 max-mobile:flex-col mobile:pt-8">
           <p className="text-neutral-100 font-b-15">
-            &copy; Copyright 2025, Alexagro All Rights Reserved
+            {t("copyright", { year: "2025" })}
           </p>
 
           {/* Social Media Links */}
@@ -74,7 +73,9 @@ export default function Footer() {
             {socialMediaLinks.map((i, index) => (
               <Link key={`social-media-${index}`} href={i.href}>
                 <IconBadge
-                  aria-label={i.label + " link"}
+                  aria-label={t("ariaLinkLabel", {
+                    label: t(`socialLabels.${i.label}`),
+                  })}
                   className="p-[7px]"
                   iconProps={{ style: { fontSize: "1rem" } }}
                   icon={i.icon}

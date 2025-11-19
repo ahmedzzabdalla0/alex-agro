@@ -28,7 +28,7 @@ export default function Button<T extends ElementType = "button">({
       className={twMerge(
         "group border text-secondary transition-colors font-b-19",
         children
-          ? "flex items-center gap-x-2 rounded-6 px-4 py-2 mobile:px-5 mobile:py-3.5"
+          ? "flex items-center gap-x-2 rounded-6 px-4 py-2 mobile:px-5 mobile:py-3.5 rtl:flex-row-reverse"
           : "rounded-full p-1.5",
         variant === "primary" &&
           "border-primary bg-primary hover:border-primary-200 hover:bg-primary-200",
@@ -41,7 +41,10 @@ export default function Button<T extends ElementType = "button">({
       {children}
       <Icon
         size={20}
-        className={twMerge("rotate-180 text-secondary transition-colors")}
+        className={twMerge(
+          "rotate-180 text-secondary transition-colors",
+          !children && "rtl:rotate-0",
+        )}
       />
     </Component>
   );
