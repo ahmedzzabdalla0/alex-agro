@@ -45,10 +45,6 @@
   }
 }
 
-/* Variants */
-
-@custom-variant dark (&:where(.dark, .dark *));
-
 /* Variables */
 
 @theme {
@@ -56,7 +52,7 @@
   --container-*: initial;
 
   /* Breakpoints */
-  --breakpoint-mobile: 768px;
+  --breakpoint-mobile: 790px;
   --breakpoint-tablet: 1024px;
   --breakpoint-desktop: 1440px;
   --breakpoint-large-desktop: 1720px;
@@ -298,6 +294,15 @@
     var(--leading-18) var(--font-label);
   --font-mobile-label: var(--font-weight-label-0) var(--font-size-2) /
     var(--leading-18) var(--font-label);
+}
+
+@layer theme {
+  :root,
+  :host {
+    @variant rtl {
+      --leading-0: 6.875rem; /* 110px */
+    }
+  }
 }
 
 /* Fonts */

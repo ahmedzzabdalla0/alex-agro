@@ -4,7 +4,7 @@ import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
 export const companyLinks = [
   {
     label: "home",
-    href: "#",
+    href: "/",
   },
   {
     label: "aboutUs",
